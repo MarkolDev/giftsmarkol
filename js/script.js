@@ -23,8 +23,7 @@ class Utils {
     }
 
     static formatGiftCode(code) {
-        // Оставляем как есть, без преобразования в верхний регистр
-        return code.replace(/[^A-Za-z0-9-]/g, '');
+        return code.toUpperCase().replace(/[^A-Z0-9-]/g, '');
     }
 
     static isValidCode(code) {
@@ -58,13 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Обработка ввода кода на typecode.html
+    // Обработка ввода кода
     const codeInput = document.getElementById('giftCode');
     if (codeInput) {
         codeInput.addEventListener('input', function(e) {
-            // НЕ ПРЕОБРАЗУЕМ В ВЕРХНИЙ РЕГИСТР
-            // Оставляем как вводят, только фильтруем спецсимволы
-            this.value = this.value.replace(/[^A-Za-z0-9-]/g, '');
+            this.value = this.value.toUpperCase().replace(/[^A-Z0-9-]/g, '');
         });
 
         codeInput.addEventListener('keypress', function(e) {
@@ -89,7 +86,6 @@ function submitCode() {
     const input = document.getElementById('giftCode');
     if (!input) return;
 
-    // БЕЗ ПРЕОБРАЗОВАНИЯ В ВЕРХНИЙ РЕГИСТР
     const code = Utils.formatGiftCode(input.value.trim());
     
     if (!Utils.isValidCode(code)) {
@@ -99,40 +95,9 @@ function submitCode() {
 
     Utils.showLoading('Проверка кода...');
     
-    // Проверяем существование файла
-    checkFileExists(code).then(exists => {
-        if (exists) {
-            // Файл существует, переходим
-            setTimeout(() => {
-                // Открываем в том же регистре, как ввели
-                window.location.href = code + '.html';
-            }, 800);
-        } else {
-            // Файл не существует, показываем ошибку
-            setTimeout(() => {
-                Utils.hideLoading();
-                alert('Подарок с таким кодом не найден. Проверьте правильность кода.');
-                input.focus();
-                input.select();
-            }, 800);
-        }
-    }).catch(() => {
-        // Если проверка не удалась, все равно пробуем перейти
-        setTimeout(() => {
-            window.location.href = code + '.html';
-        }, 800);
-    });
-}
-
-// Функция для проверки существования файла
-async function checkFileExists(filename) {
-    try {
-        const response = await fetch(filename + '.html', { method: 'HEAD' });
-        return response.ok;
-    } catch (error) {
-        console.log('Не удалось проверить файл:', error);
-        return false;
-    }
+    setTimeout(() => {
+        window.location.href = code + '.html';
+    }, 800);
 }
 
 // Функция для перехода на главную
