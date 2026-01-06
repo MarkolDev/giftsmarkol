@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш подарок - Markol.RendemGift</title>
+    <link rel="icon" type="image/png" href="https://markoldev.github.io/brand/catbezfona.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Загрузка подарка...</p>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="index.html" style="text-decoration: none; color: inherit;" onclick="goToHome(); return false;">
+                <div class="logo-wrapper">
+                    <img src="https://markoldev.github.io/brand/catbezfona.png" alt="Markol Logo" class="logo">
+                </div>
+                <h1>ВАШ ПОДАРОК</h1>
+                <p class="subtitle">Поздравляем с получением подарка!</p>
+            </a>
+        </header>
+
+        <main class="main-content">
+            <div class="gift-container fade-in">
+                <div class="gift-icon-container">
+                    <div class="gift-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                </div>
+                
+                <div class="promo-code" id="promoCode">
+                    XXXXX
+                </div>
+                
+                <h2 class="gift-title" id="giftTitle">
+                    Вам подарили "<span style="color: #5CCDE8;">Эксклюзивный доступ</span>"
+                </h2>
+                
+                <!-- Блок 1: Отправитель -->
+                <div class="profile-info-block">
+                    <div class="profile-title">
+                        <i class="fas fa-user-tie"></i>
+                        Отправитель
+                    </div>
+                    <div class="profile-name" id="senderName">
+                        Markol
+                    </div>
+                    <div class="profile-link">
+                        Профиль: <a href="https://example.com/markol" id="senderProfile" target="_blank">https://example.com/markol</a>
+                    </div>
+                </div>
+                
+                <!-- Блок 2: Кому -->
+                <div class="profile-info-block">
+                    <div class="profile-title">
+                        <i class="fas fa-user"></i>
+                        Кому
+                    </div>
+                    <div class="profile-name" id="recipientName">
+                        Имя получателя
+                    </div>
+                    <div class="profile-link">
+                        Профиль: <a href="https://example.com/recipient" id="recipientProfile" target="_blank">https://example.com/recipient</a>
+                    </div>
+                </div>
+                
+                <!-- Блок с инструкцией -->
+                <div class="instruction-block">
+                    <h3 style="color: #5CCDE8; text-align: center; margin-bottom: 25px;">
+                        <i class="fas fa-camera"></i> КАК ПОЛУЧИТЬ ПОДАРОК
+                    </h3>
+                    
+                    <div class="instruction-steps">
+                        <div class="instruction-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Сделайте скриншот этой страницы</h4>
+                                <p>Нажмите комбинацию клавиш:</p>
+                                <div class="shortcut-keys">
+                                    <span class="key">Win</span> + <span class="key">Shift</span> + <span class="key">S</span>
+                                    <span class="key-separator">или</span>
+                                    <span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">4</span>
+                                </div>
+                                <p style="color: #a0d8e9; font-size: 0.9rem; margin-top: 5px;">
+                                    <i class="fas fa-mobile-alt"></i> На телефоне: стандартный скриншот
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Отправьте скриншот отправителю</h4>
+                                <p>Перейдите по ссылке выше в блоке "Отправитель" и отправьте скриншот этой страницы</p>
+                                <div class="screenshot-preview">
+                                    <div class="screenshot-frame">
+                                        <div class="screenshot-header">
+                                            <div class="screenshot-dot red"></div>
+                                            <div class="screenshot-dot yellow"></div>
+                                            <div class="screenshot-dot green"></div>
+                                            <div class="screenshot-url">markol.rendemgift.com/gift</div>
+                                        </div>
+                                        <div class="screenshot-content">
+                                            <div class="screenshot-gift-icon">
+                                                <i class="fas fa-gift"></i>
+                                            </div>
+                                            <div class="screenshot-code">ПРОМОКОД: XXXXX</div>
+                                            <div class="screenshot-text">ВАШ ПОДАРОК</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Получите активацию</h4>
+                                <p>Отправитель проверит скриншот и активирует ваш подарок</p>
+                                <div class="success-check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Подарок будет активирован в течение 24 часов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="important-note">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Важно:</strong> На скриншоте должны быть видны код подарка и информация о получателе
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кнопки -->
+                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+                    <a href="index.html" class="btn btn-secondary" onclick="goToHome(); return false;">
+                        <i class="fas fa-home"></i>
+                        На главную
+                    </a>
+                    
+                    <a href="typecode.html" class="btn btn-secondary">
+                        <i class="fas fa-ticket-alt"></i>
+                        Ввести другой код
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Для получения подарка отправьте скриншот этой страницы отправителю</p>
+            <p>Активация в течение 24 часов после отправки скриншота</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <style>
+        /* Стили для блоков профиля */
+        .profile-info-block {
+            background: rgba(79, 187, 217, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(79, 187, 217, 0.3);
+            text-align: center;
+        }
+        
+        .profile-title {
+            color: #5CCDE8;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .profile-name {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .profile-link {
+            color: #a0d8e9;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .profile-link a {
+            color: #5CCDE8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-link a:hover {
+            color: #4FBBD9;
+            text-decoration: underline;
+        }
+        
+        /* Стили для блока инструкции */
+        .instruction-block {
+            background: rgba(0, 29, 34, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #3F8290;
+            margin: 30px 0;
+        }
+        
+        .instruction-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .instruction-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #4FBBD9, #5CCDE8);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            color: #5CCDE8;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .step-content p {
+            color: #a0d8e9;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .shortcut-keys {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        
+        .key {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 12px;
+            border-radius: 8px;
+            border: 1px solid #3F8290;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        
+        .key-separator {
+            color: #a0d8e9;
+            font-size: 0.9rem;
+        }
+        
+        /* Стили для превью скриншота */
+        .screenshot-preview {
+            margin: 20px 0;
+        }
+        
+        .screenshot-frame {
+            background: #f5f5f5;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid #3F8290;
+        }
+        
+        .screenshot-header {
+            background: #333;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .screenshot-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .screenshot-dot.red { background: #ff5f56; }
+        .screenshot-dot.yellow { background: #ffbd2e; }
+        .screenshot-dot.green { background: #27ca3f; }
+        
+        .screenshot-url {
+            color: #aaa;
+            font-size: 0.8rem;
+            margin-left: auto;
+            font-family: monospace;
+        }
+        
+        .screenshot-content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .screenshot-gift-icon {
+            color: #5CCDE8;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-code {
+            color: #000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        
+        .screenshot-text {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        /* Стили для успешной проверки */
+        .success-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(46, 213, 115, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            margin-top: 15px;
+        }
+        
+        .success-check i {
+            color: #2ed573;
+            font-size: 1.5rem;
+        }
+        
+        .success-check span {
+            color: #a0d8e9;
+        }
+        
+        /* Важное примечание */
+        .important-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: rgba(255, 71, 87, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            margin-top: 30px;
+        }
+        
+        .important-note i {
+            color: #ff4757;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .important-note div {
+            color: #ffa8a8;
+            line-height: 1.5;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .instruction-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-bottom: 10px;
+            }
+            
+            .screenshot-frame {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+    
+    <script>
+        // Функция для перехода на главную
+        function goToHome() {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.add('active');
+                overlay.querySelector('p').textContent = 'Возврат на главную...';
+            }
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        }
+        
+        // Функция для обновления данных подарка через URL параметры
+        function updateGiftFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (urlParams.has('code')) {
+                const code = urlParams.get('code');
+                document.getElementById('promoCode').textContent = code;
+                // Обновляем также в превью скриншота
+                document.querySelector('.screenshot-code').textContent = `ПРОМОКОД: ${code}`;
+            }
+            
+            if (urlParams.has('name')) {
+                document.querySelector('#giftTitle span').textContent = decodeURIComponent(urlParams.get('name'));
+            }
+            
+            if (urlParams.has('from')) {
+                document.getElementById('senderName').textContent = decodeURIComponent(urlParams.get('from'));
+            }
+            
+            if (urlParams.has('from_url')) {
+                document.getElementById('senderProfile').href = decodeURIComponent(urlParams.get('from_url'));
+                document.getElementById('senderProfile').textContent = decodeURIComponent(urlParams.get('from_url'));
+            }
+            
+            if (urlParams.has('to')) {
+                document.getElementById('recipientName').textContent = decodeURIComponent(urlParams.get('to'));
+            }
+            
+            if (urlParams.has('to_url')) {
+                document.getElementById('recipientProfile').href = decodeURIComponent(urlParams.get('to_url'));
+                document.getElementById('recipientProfile').textContent = decodeURIComponent(urlParams.get('to_url'));
+            }
+        }
+        
+        // Анимация иконки подарка
+        document.addEventListener('DOMContentLoaded', function() {
+            updateGiftFromUrl();
+            
+            const giftIcon = document.querySelector('.gift-icon');
+            setInterval(() => {
+                giftIcon.style.transform = 'translateY(-10px) scale(1.1)';
+                setTimeout(() => {
+                    giftIcon.style.transform = 'translateY(0) scale(1)';
+                }, 300);
+            }, 3000);
+            
+            // Анимация для точек в превью скриншота
+            const dots = document.querySelectorAll('.screenshot-dot');
+            setInterval(() => {
+                dots.forEach(dot => {
+                    dot.style.opacity = '0.5';
+                    setTimeout(() => {
+                        dot.style.opacity = '1';
+                    }, 300);
+                });
+            }, 2000);
+            
+            // Копирование кода по клику
+            const promoCodeElement = document.getElementById('promoCode');
+            promoCodeElement.addEventListener('click', function() {
+                const code = this.textContent.trim();
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = '✅ Скопировано!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                });
+            });
+            
+            // Показываем подсказку по горячим клавишам
+            const shortcutKeys = document.querySelector('.shortcut-keys');
+            shortcutKeys.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            shortcutKeys.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Функция для симуляции создания скриншота (опционально)
+        function simulateScreenshot() {
+            alert('Скриншот создан! Теперь отправьте его отправителю.');
+            // Здесь можно добавить реальное создание скриншота через библиотеку
+            // например, html2canvas для создания скриншота страницы
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод кода - Markol.RendemGift</title>
+    <link rel="icon" type="image/png" href="https://markoldev.github.io/brand/catbezfona.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Проверка кода...</p>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo-wrapper">
+                    <img src="https://markoldev.github.io/brand/catbezfona.png" alt="Markol Logo" class="logo">
+                </div>
+                <h1>ВВЕДИТЕ КОД БИЛЕТИКА</h1>
+                <p class="subtitle">Получите свой подарок от Markol</p>
+            </a>
+        </header>
+
+        <main class="main-content">
+            <div class="ticket-container fade-in">
+                <h2 class="ticket-title">
+                    <i class="fas fa-gift"></i>
+                    Напиши свой код билетика
+                </h2>
+                
+                <form id="codeForm">
+                    <input 
+                        type="text" 
+                        id="giftCode" 
+                        class="ticket-input" 
+                        placeholder="Например: MARKOLGIFT"
+                        maxlength="50"
+                        autocomplete="off"
+                        autofocus
+                    >
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i>
+                        Получить подарок
+                    </button>
+                </form>
+
+                <div style="margin-top: 20px;">
+                    <a href="index.html" class="btn btn-secondary btn-full">
+                        <i class="fas fa-arrow-left"></i>
+                        На главную
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Введите код, указанный в вашем подарочном билете</p>
+            <p>Код нечувствителен к регистру</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

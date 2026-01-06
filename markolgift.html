@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkolGift - Ваш подарок</title>
+    <link rel="icon" type="image/png" href="https://markoldev.github.io/brand/catbezfona.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Загрузка вашего подарка...</p>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="index.html" style="text-decoration: none; color: inherit;" onclick="goToHome(); return false;">
+                <div class="logo-wrapper">
+                    <img src="https://markoldev.github.io/brand/catbezfona.png" alt="Markol Logo" class="logo">
+                </div>
+                <h1>MARKOLGIFT</h1>
+                <p class="subtitle">Особый подарок от создателя</p>
+            </a>
+        </header>
+
+        <main class="main-content">
+            <div class="gift-container fade-in">
+                <div class="gift-icon-container">
+                    <div class="gift-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                </div>
+                
+                <div class="promo-code">
+                    MARKOLGIFT
+                </div>
+                
+                <h2 class="gift-title">
+                    Вам подарили "<span style="color: #5CCDE8;">Эксклюзивный доступ к бета-тестированию</span>"
+                </h2>
+                
+                <div class="gift-from">
+                    <i class="fas fa-user-circle"></i>
+                    От "<span style="color: #5CCDE8;">Markol</span>"
+                </div>
+                
+                <div style="background: rgba(79, 187, 217, 0.1); padding: 20px; border-radius: 15px; margin: 30px 0; border: 1px solid rgba(79, 187, 217, 0.3);">
+                    <h4 style="color: #5CCDE8; margin-bottom: 15px;">
+                        <i class="fas fa-gem"></i> Премиум возможности
+                    </h4>
+                    <ul style="color: #a0d8e9; line-height: 1.6; text-align: left; padding-left: 20px;">
+                        <li>Доступ к закрытому бета-тестированию</li>
+                        <li>Приоритетная техническая поддержка</li>
+                        <li>Эксклюзивный контент от создателя</li>
+                        <li>Ранний доступ к новым функциям</li>
+                    </ul>
+                </div>
+                
+                <a href="clgf.html" class="btn btn-primary" style="width: 100%; padding: 20px; font-size: 1.2rem;">
+                    <i class="fas fa-gift"></i>
+                    ПОЛУЧИТЬ ЭКСКЛЮЗИВНЫЙ ПОДАРОК
+                </a>
+                
+                <div style="margin-top: 30px;">
+                    <a href="index.html" class="btn btn-secondary" onclick="goToHome(); return false;">
+                        <i class="fas fa-home"></i>
+                        На главную
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Это эксклюзивный подарок от Markol. Спасибо, что вы с нами!</p>
+            <p>Для вопросов и поддержки используйте кнопку "Поддержка" на главной странице</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Функция для перехода на главную
+        function goToHome() {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.add('active');
+                overlay.querySelector('p').textContent = 'Возврат на главную...';
+            }
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
